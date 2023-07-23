@@ -154,6 +154,11 @@ class MinioClient {
 
     final authorization = signV4(minio, request, date, region);
     request.headers['authorization'] = authorization;
+    
+    if (minio.sessionToken != null) {
+      print(minio.sessionToken!)
+      request.headers['x-amz-security-token'] = minio.sessionToken!;
+    }
 
     logRequest(request);
     final response = await request.send();
