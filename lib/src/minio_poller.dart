@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:minio/src/minio_client.dart';
+import 'package:minio_new/src/minio_client.dart';
 
 class NotificationPoller {
   NotificationPoller(

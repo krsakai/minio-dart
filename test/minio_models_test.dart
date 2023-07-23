@@ -1,4 +1,4 @@
-import 'package:minio/models.dart';
+import 'package:minio_new/models.dart';
 import 'package:test/test.dart';
 
 void main() {

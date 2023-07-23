@@ -4,11 +4,11 @@ import 'dart:typed_data';
 
 import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart';
-import 'package:minio/minio.dart';
-import 'package:minio/models.dart';
-import 'package:minio/src/minio_client.dart';
-import 'package:minio/src/minio_helpers.dart';
-import 'package:minio/src/utils.dart';
+import 'package:minio_new/minio.dart';
+import 'package:minio_new/models.dart';
+import 'package:minio_new/src/minio_client.dart';
+import 'package:minio_new/src/minio_helpers.dart';
+import 'package:minio_new/src/utils.dart';
 
 class MinioUploader implements StreamConsumer<Uint8List> {
   MinioUploader(
@@ -131,11 +131,6 @@ class MinioUploader implements StreamConsumer<Uint8List> {
   }
 
   Future<void> _initMultipartUpload() async {
-    //FIXME: this code still causes Signature Error
-    //FIXME: https://github.com/xtyxtyx/minio-dart/issues/7
-    //TODO: uncomment when fixed
-    // uploadId = await minio.findUploadId(bucket, object);
-
     if (_uploadId == null) {
       _uploadId =
           await minio.initiateNewMultipartUpload(bucket, object, metadata);

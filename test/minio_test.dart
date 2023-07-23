@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:minio/io.dart';
-import 'package:minio/minio.dart';
-import 'package:minio/src/minio_models_generated.dart';
-import 'package:minio/src/utils.dart';
+import 'package:minio_new/io.dart';
+import 'package:minio_new/minio.dart';
+import 'package:minio_new/src/minio_models_generated.dart';
+import 'package:minio_new/src/utils.dart';
 import 'package:test/test.dart';
 
 import 'helpers.dart';
@@ -564,7 +564,6 @@ void testListenBucketNotification() {
     //   await minio.putObject(bucketName, objectName, Stream.value([0]));
     //   await minio.removeObject(bucketName, objectName);
 
-    //   // FIXME: Needs sleep here
     //   expect(receivedEvents, isNotEmpty);
 
     //   poller.stop();

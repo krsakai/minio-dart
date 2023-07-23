@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:minio/io.dart';
-import 'package:minio/minio.dart';
+import 'package:minio_new/io.dart';
+import 'package:minio_new/minio.dart';
 
 void main() async {
   final minio = Minio(

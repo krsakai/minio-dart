@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart';
-import 'package:minio/minio.dart';
-import 'package:minio/src/minio_helpers.dart';
-import 'package:minio/src/minio_s3.dart';
-import 'package:minio/src/minio_sign.dart';
-import 'package:minio/src/utils.dart';
+import 'package:minio_new/minio.dart';
+import 'package:minio_new/src/minio_helpers.dart';
+import 'package:minio_new/src/minio_s3.dart';
+import 'package:minio_new/src/minio_sign.dart';
+import 'package:minio_new/src/utils.dart';
 
 class MinioRequest extends BaseRequest {
   MinioRequest(String method, Uri url, {this.onProgress}) : super(method, url);
@@ -152,13 +152,12 @@ class MinioClient {
       'x-amz-content-sha256': sha256sum,
     });
 
-    final authorization = signV4(minio, request, date, region);
-    request.headers['authorization'] = authorization;
-    
     if (minio.sessionToken != null) {
-      print(minio.sessionToken!)
       request.headers['x-amz-security-token'] = minio.sessionToken!;
     }
+
+    final authorization = signV4(minio, request, date, region);
+    request.headers['authorization'] = authorization;
 
     logRequest(request);
     final response = await request.send();

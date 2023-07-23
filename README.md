@@ -70,8 +70,8 @@ final minio = Minio(
 
 **File upload**
 ```dart
-import 'package:minio/io.dart';
-import 'package:minio/minio.dart';
+import 'package:minio_new/io.dart';
+import 'package:minio_new/minio.dart';
 
 void main() async {
   final minio = Minio(
@@ -86,11 +86,11 @@ void main() async {
 
 For complete example, see: [example]
 
-> To use `fPutObject()` and `fGetObject`, you have to `import 'package:minio/io.dart';`
+> To use `fPutObject()` and `fGetObject`, you have to `import 'package:minio_new/io.dart';`
 
 **Upload with progress**
 ```dart
-import 'package:minio/minio.dart';
+import 'package:minio_new/minio.dart';
 
 void main() async {
   final minio = Minio(
@@ -112,7 +112,7 @@ void main() async {
 
 ```dart
 import 'dart:io';
-import 'package:minio/minio.dart';
+import 'package:minio_new/minio.dart';
 
 void main() async {
   final minio = Minio(

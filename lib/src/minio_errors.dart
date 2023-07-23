@@ -1,6 +1,6 @@
-import 'package:minio/models.dart';
-import 'package:minio/src/minio_client.dart';
-import 'package:minio/src/minio_helpers.dart';
+import 'package:minio_new/models.dart';
+import 'package:minio_new/src/minio_client.dart';
+import 'package:minio_new/src/minio_helpers.dart';
 
 class MinioError {
   MinioError(this.message);

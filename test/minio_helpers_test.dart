@@ -1,4 +1,4 @@
-import 'package:minio/src/minio_helpers.dart';
+import 'package:minio_new/src/minio_helpers.dart';
 import 'package:test/test.dart';
 
 void main() {
